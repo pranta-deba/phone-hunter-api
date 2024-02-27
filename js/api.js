@@ -40,7 +40,7 @@ const displayPhone = (phones, isShowAll) => {
                             majority have suffered</p>
                         <p class="text-2xl font-bold">$<span>999</span></p>
                         <div class="card-actions">
-                            <button class="btn btn-primary text-xl font-semibold text-[#FFF]">Show Details</button>
+                            <button onclick="handleShowDetails('${phone.slug}')" class="btn btn-primary text-xl font-semibold text-[#FFF]">Show Details</button>
                         </div>
                     </div>`;
     phoneContainer.appendChild(div);
@@ -76,4 +76,28 @@ function handleSearch (isShowAll){
 const showAllBtn = document.getElementById('showAllBtn');
 showAllBtn.addEventListener('click', ()=> {
     handleSearch(true);
-})
+});
+
+// show details
+const handleShowDetails = async (id) => {
+    const response = await fetch(`https://openapi.programming-hero.com/api/phone/${id}`)
+    const details = await response.json();
+    showPhoneDetails(details)
+};
+
+// show phone details
+const showPhoneDetails = (phoneInfo) =>{
+    const data = phoneInfo.data;
+    const phoneDetailsElement = document.querySelectorAll('.phone-details-element');
+    phoneDetailsElement[0].src = data.image;
+    phoneDetailsElement[1].innerText = data.name;
+    phoneDetailsElement[2].childNodes[1].innerText = data?.mainFeatures?.storage;
+    phoneDetailsElement[3].childNodes[1].innerText = data?.mainFeatures?.displaySize;
+    phoneDetailsElement[4].childNodes[1].innerText = data?.mainFeatures?.chipSet;
+    phoneDetailsElement[5].childNodes[1].innerText = data?.mainFeatures?.memory;
+    phoneDetailsElement[6].childNodes[1].innerText = data?.releaseDate;
+    phoneDetailsElement[7].childNodes[1].innerText = data?.brand;
+    phoneDetailsElement[8].childNodes[1].innerText = data?.others?.GPS || 'no GPS available';
+    my_modal_5.showModal();
+};
+

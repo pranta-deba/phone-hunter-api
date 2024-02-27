@@ -40,6 +40,7 @@
     </header>
     <main class="max-w-[1500px] w-[100%] md:w-[95%] lg:w-[90%] mx-auto px-4 md:px-0">
         <section>
+            <!-- search input container start -->
             <div class="flex flex-col justify-center items-center space-y-7">
                 <h1 class="text-4xl font-semibold">Search your phone</h1>
                 <div class="join">
@@ -48,15 +49,46 @@
                     <button onclick="handleSearch()" class="btn btn-primary join-item rounded-r-full text-xl font-semibold text-[#FFF]">Search</button>
                 </div>
             </div>
+            <!-- search input container end -->
+            <!-- loading spinner container start -->
             <div id="loadingContainer" class="flex justify-center items-center my-4 hidden">
                 <span class="loading loading-bars loading-lg"></span>
             </div>
+            <!-- loading spinner container end -->
+            <!-- dynamic data container start -->
             <div id="phone-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-center items-center gap-6 mt-6">
 
-            </div>
+            </div>       
+            <!-- dynamic data container end -->
+            <!-- show all btn container start -->
             <div id="show-all-container" class="my-6 text-center hidden">
                 <button id="showAllBtn" class="btn btn-primary text-xl font-bold rounded-lg text-white px-8 cursor-pointer">Show All</button>
             </div>
+            <!-- show all btn container end -->
+            <!-- details modal container start -->
+            <div>
+                <dialog id="my_modal_5" class="modal modal-bottom sm:modal-middle">
+                <div class="modal-box">
+                    <figure class="px-8 py-3 bg-[#100F0F0D] flex justify-center items-center">
+                        <img class="phone-details-element" src="" alt="loading....."/>
+                    </figure>
+                    <h3 class="font-bold text-3xl mt-4 phone-details-element"></h3>
+                    <p class="py-1 text-xl font-semibold phone-details-element">Storage : <span class="text-[#706F6F] font-normal"></span></p>
+                    <p class="py-1 text-xl font-semibold phone-details-element">Display Size : <span class="text-[#706F6F] font-normal"></span></p>
+                    <p class="py-1 text-xl font-semibold phone-details-element">Chipset : <span class="text-[#706F6F] font-normal"></span></p>
+                    <p class="py-1 text-xl font-semibold phone-details-element">Memory : <span class="text-[#706F6F] font-normal"></span></p>
+                    <p class="py-1 text-xl font-semibold phone-details-element">Release data : <span class="text-[#706F6F] font-normal"></span></p>
+                    <p class="py-1 text-xl font-semibold phone-details-element">Brand : <span class="text-[#706F6F] font-normal"></span></p>
+                    <p class="py-1 text-xl font-semibold phone-details-element">GPS : <span class="text-[#706F6F] font-normal"></span></p>
+                    <div class="modal-action">
+                    <form method="dialog">
+                        <button class="btn bg-[#DC3545] text-white hover:text-black px-10">Close</button>
+                    </form>
+                    </div>
+                </div>
+                </dialog>
+            </div>
+            <!-- details modal container end -->
         </section>
     </main>
     <footer>
