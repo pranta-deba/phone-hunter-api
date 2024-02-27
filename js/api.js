@@ -1,14 +1,29 @@
-const loadPhone = async () => {
-  const response = await fetch(
-    "https://openapi.programming-hero.com/api/phones?search=iphone"
-  );
+// fetch api load data
+const loadPhone = async (searchValue) => {
+  const response = await fetch(`https://openapi.programming-hero.com/api/phones?search=${searchValue}`);
   const data = await response.json();
   const phones = data.data;
   displayPhone(phones);
 };
 
+// display phone
 const displayPhone = (phones) => {
+// phone-container again search for empty
   const phoneContainer = document.getElementById("phone-container");
+  phoneContainer.textContent = '';
+
+// show-all-container btn hide show for condition
+  const showAllContainer = document.getElementById('show-all-container');
+  if (phones.length > 12) {
+    showAllContainer.classList.remove('hidden');
+  }else{
+    showAllContainer.classList.add('hidden');
+  }
+
+// display only 12 data
+  phones = phones.slice(0,12);
+  
+//display data used forEach
   phones.forEach((phone) => {
     const div = document.createElement("div");
     div.classList = "card bg-base-100 shadow-xl p-4 border border-2 boder-[#CFCFCF]";
@@ -25,7 +40,19 @@ const displayPhone = (phones) => {
                         </div>
                     </div>`;
     phoneContainer.appendChild(div);
-    console.log(phone);
+    // console.log(phone);
   });
 };
-loadPhone();
+
+// search 
+const searchBtn = document.getElementById('searchBtn');
+searchBtn.addEventListener('click', ()=> {
+    const searchInput = document.getElementById('searchInput');
+    const searchValue = searchInput.value;
+    if(searchValue === ""){
+        return alert("please provide a phone name.!")
+    }
+    loadPhone(searchValue);
+});
+
+

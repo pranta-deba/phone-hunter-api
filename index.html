@@ -43,14 +43,16 @@
             <div class="flex flex-col justify-center items-center space-y-7">
                 <h1 class="text-4xl font-semibold">Search your phone</h1>
                 <div class="join">
-                    <input class="input input-bordered join-item bg-[#100F0F0D] text-base font-normal"
+                    <input id="searchInput" class="input input-bordered join-item bg-[#100F0F0D] text-base font-normal"
                         placeholder="Search your phone" />
-                    <button
-                        class="btn btn-primary join-item rounded-r-full text-xl font-semibold text-[#FFF]">Search</button>
+                    <button id="searchBtn" class="btn btn-primary join-item rounded-r-full text-xl font-semibold text-[#FFF]">Search</button>
                 </div>
             </div>
             <div id="phone-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-center items-center gap-6 mt-6">
-                
+
+            </div>
+            <div id="show-all-container" class="my-6 text-center hidden">
+                <button class="btn btn-primary text-xl font-bold rounded-lg text-white px-8 cursor-pointer">Show All</button>
             </div>
         </section>
     </main>
