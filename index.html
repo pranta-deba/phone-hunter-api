@@ -13,7 +13,7 @@
 
 <body>
 
-    <header class="max-w-[1500px] w-[100%] md:w-[95%] lg:w-[90%] mx-auto hidden">
+    <header class="max-w-[1500px] w-[100%] md:w-[95%] lg:w-[90%] mx-auto">
         <nav class="mt-4">
             <div class="navbar bg-base-100">
                 <div class="flex-1">
@@ -29,7 +29,8 @@
                 <div class="hero-content text-center">
                     <div class="space-y-5">
                         <h1 class="text-6xl font-bold">Apple Iphone 13 Pro Max</h1>
-                        <p class="py-6 max-w-[738px] mx-auto">There are many variations of passages of Lorem Ipsum
+                        <p class="py-6 text-lg font-normal text-[#706F6F] md:max-w-[738px] mx-auto">There are many
+                            variations of passages of Lorem Ipsum
                             available, but the majority have suffered alteration in some form, by injected humou.</p>
                         <button class="btn btn-primary text-xl font-bold rounded-lg text-white px-8 cursor-pointer">Buy
                             Now</button>
@@ -37,16 +38,23 @@
                 </div>
             </div>
         </div>
+        <div class="grid grid-cols-2 lg:grid-cols-3 justify-center items-baseline gap-0 lg:-mt-96">
+            <img src="./images/pngwing1.png" alt="" class="">
+            <img src="./images/pngwing1.png" alt="" class="w-full">
+            <img src="./images/pngwing1.png" alt="" class="hidden md:flex">
+        </div>
     </header>
-    <main class="max-w-[1500px] w-[100%] md:w-[95%] lg:w-[90%] mx-auto px-4 md:px-0">
+    <main class="max-w-[1500px] w-[100%] md:w-[95%] lg:w-[90%] mx-auto px-4 md:px-0 my-6">
         <section>
             <!-- search input container start -->
             <div class="flex flex-col justify-center items-center space-y-7">
-                <h1 class="text-4xl font-semibold">Search your phone</h1>
-                <div class="join">
-                    <input id="searchInput" class="input input-bordered join-item bg-[#100F0F0D] text-base font-normal"
+                <h1 class="text-4xl font-semibold text-center">Search your phone</h1>
+                <div class="md:join text-center">
+                    <input id="searchInput"
+                        class="input input-bordered md:join-item bg-[#100F0F0D] text-base font-normal"
                         placeholder="Search your phone" />
-                    <button onclick="handleSearch()" class="btn btn-primary join-item rounded-r-full text-xl font-semibold text-[#FFF]">Search</button>
+                    <button onclick="handleSearch()"
+                        class="btn btn-primary md:join-item mt-3 md:mt-0 md:rounded-r-full text-xl font-semibold text-[#FFF]">Search</button>
                 </div>
             </div>
             <!-- search input container end -->
@@ -56,46 +64,81 @@
             </div>
             <!-- loading spinner container end -->
             <!-- dynamic data container start -->
-            <div id="phone-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-center items-center gap-6 mt-6">
+            <div id="phone-container"
+                class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-center items-center gap-6 mt-6">
 
-            </div>       
+            </div>
             <!-- dynamic data container end -->
             <!-- show all btn container start -->
             <div id="show-all-container" class="my-6 text-center hidden">
-                <button id="showAllBtn" class="btn btn-primary text-xl font-bold rounded-lg text-white px-8 cursor-pointer">Show All</button>
+                <button id="showAllBtn"
+                    class="btn btn-primary text-xl font-bold rounded-lg text-white px-8 cursor-pointer">Show
+                    All</button>
             </div>
             <!-- show all btn container end -->
             <!-- details modal container start -->
             <div>
                 <dialog id="my_modal_5" class="modal modal-bottom sm:modal-middle">
-                <div class="modal-box">
-                    <figure class="px-8 py-3 bg-[#100F0F0D] flex justify-center items-center">
-                        <img class="phone-details-element" src="" alt="loading....."/>
-                    </figure>
-                    <h3 class="font-bold text-3xl mt-4 phone-details-element"></h3>
-                    <p class="py-1 text-xl font-semibold phone-details-element">Storage : <span class="text-[#706F6F] font-normal"></span></p>
-                    <p class="py-1 text-xl font-semibold phone-details-element">Display Size : <span class="text-[#706F6F] font-normal"></span></p>
-                    <p class="py-1 text-xl font-semibold phone-details-element">Chipset : <span class="text-[#706F6F] font-normal"></span></p>
-                    <p class="py-1 text-xl font-semibold phone-details-element">Memory : <span class="text-[#706F6F] font-normal"></span></p>
-                    <p class="py-1 text-xl font-semibold phone-details-element">Release data : <span class="text-[#706F6F] font-normal"></span></p>
-                    <p class="py-1 text-xl font-semibold phone-details-element">Brand : <span class="text-[#706F6F] font-normal"></span></p>
-                    <p class="py-1 text-xl font-semibold phone-details-element">GPS : <span class="text-[#706F6F] font-normal"></span></p>
-                    <div class="modal-action">
-                    <form method="dialog">
-                        <button class="btn bg-[#DC3545] text-white hover:text-black px-10">Close</button>
-                    </form>
+                    <div class="modal-box">
+                        <figure class="px-8 py-3 bg-[#100F0F0D] flex justify-center items-center">
+                            <img class="phone-details-element" src="" alt="loading....." />
+                        </figure>
+                        <h3 class="font-bold text-3xl mt-4 phone-details-element"></h3>
+                        <p class="py-1 text-xl font-semibold phone-details-element">Storage : <span
+                                class="text-[#706F6F] font-normal"></span></p>
+                        <p class="py-1 text-xl font-semibold phone-details-element">Display Size : <span
+                                class="text-[#706F6F] font-normal"></span></p>
+                        <p class="py-1 text-xl font-semibold phone-details-element">Chipset : <span
+                                class="text-[#706F6F] font-normal"></span></p>
+                        <p class="py-1 text-xl font-semibold phone-details-element">Memory : <span
+                                class="text-[#706F6F] font-normal"></span></p>
+                        <p class="py-1 text-xl font-semibold phone-details-element">Release data : <span
+                                class="text-[#706F6F] font-normal"></span></p>
+                        <p class="py-1 text-xl font-semibold phone-details-element">Brand : <span
+                                class="text-[#706F6F] font-normal"></span></p>
+                        <p class="py-1 text-xl font-semibold phone-details-element">GPS : <span
+                                class="text-[#706F6F] font-normal"></span></p>
+                        <div class="modal-action">
+                            <form method="dialog">
+                                <button class="btn bg-[#DC3545] text-white hover:text-black px-10">Close</button>
+                            </form>
+                        </div>
                     </div>
-                </div>
                 </dialog>
             </div>
             <!-- details modal container end -->
         </section>
     </main>
-    <footer>
-
+    <footer class="footer p-10 bg-[#0D6EFD0D] text-base-content md:py-16">
+        <aside>
+            <p class="text-4xl font-bold">Hot Gadgets</p>
+            <p>You can definitely work.</p>
+            <p>
+                <img src="./images/icon.svg" alt="">
+            </p>
+        </aside>
+        <nav>
+            <h6 class="footer-title">Services</h6>
+            <a class="link link-hover">Branding</a>
+            <a class="link link-hover">Design</a>
+            <a class="link link-hover">Marketing</a>
+            <a class="link link-hover">Advertisement</a>
+        </nav>
+        <nav>
+            <h6 class="footer-title">Company</h6>
+            <a class="link link-hover">About us</a>
+            <a class="link link-hover">Contact</a>
+            <a class="link link-hover">Jobs</a>
+            <a class="link link-hover">Press kit</a>
+        </nav>
+        <nav>
+            <h6 class="footer-title">Legal</h6>
+            <a class="link link-hover">Terms of use</a>
+            <a class="link link-hover">Privacy policy</a>
+            <a class="link link-hover">Cookie policy</a>
+        </nav>
     </footer>
 
-    <script src="./js/main.js"></script>
     <script src="./js/api.js"></script>
 </body>
 
